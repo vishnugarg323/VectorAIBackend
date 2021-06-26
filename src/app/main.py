@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from app.api import ping, cards
 from app.db import database, engine, metadata
 
+metadata.drop_all(engine)
 metadata.create_all(engine)
 
 app = FastAPI()
